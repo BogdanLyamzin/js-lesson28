@@ -17,22 +17,13 @@ json-server --watch- db.json
 
 const bookList = document.getElementById("book-list");
 
-const booksRequest = fetch("http://localhost:3000/books");
+const books = getAllBooks();
 
-booksRequest
-    .then(response => {
-        if(!response.ok){
-            throw new Error("Список книг временно недоступен")
-        }
-        return response.json()
-    })
-    .then(result => {
-        const booksElements = result.map(createBookRow);
-        // console.log(result)
-        // console.log(booksElements)
-        bookList.append(...booksElements)
-    })
-    .catch(error => console.log(error));
+books
+  .then(result => {
+    const booksMarkup = result.map(createBookRow).join("");
+    bookList.insertAdjacentHTML("beforeend", booksMarkup);
+  });
 
 function createBookRow(book) {
     const {name, author, isbn, id} = book;
@@ -67,26 +58,44 @@ function createBookRow(book) {
     return row;
 }
 
-function deleteBook(elem, id){
-    const bookDeleteRequest = fetch(`http://localhost:3000/books/${id}`, {
-        method: "DELETE"
-    });
-    bookDeleteRequest
-        .then(response => {
-            if(!response.ok){
-                throw new Error("Удаление не удалось")
-            }
-            return response.json()
-        })
-        .then(result => {
-            const {length} = Object.keys(result)
-            if(!length){
-                elem.remove()
-            }
-        })
-        .catch(error => console.log(error))
+async function deleteBook(elem, id){
+    try {
+        const response = await fetch(`http://localhost:3000/books/${id}`, {
+            method: "DELETE"
+        });
+    
+        if(!response.ok){
+            throw new Error("Удаление не удалось")
+        }
+    
+        const deleteBook = await response.json();
+    
+        const {length} = Object.keys(deleteBook)
+        if(!length){
+            elem.remove()
+        }
+    }
+    catch(error){
+        console.log(error)
+        return error;
+    }
 }
 
 function editBook(){
 
 }
+
+async function getAllBooks(){
+    try {
+      const response = await fetch("http://localhost:3000/books");
+      if(!response.ok){
+          throw new Error("Запрос не удался")
+      }
+      const books = response.json();
+      return books;
+    }
+    catch(error){
+      console.log(error)
+      return error;
+    }
+  }

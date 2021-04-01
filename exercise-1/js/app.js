@@ -34,19 +34,25 @@ json-server --watch- db.json
 </tr>
 */ 
 const bookList = document.getElementById("book-list");
-const booksRequest = axios.get("http://localhost:3000/books");
 
-/* 
-response = {
-  data: полученные с сервера данные
-}
-*/
-booksRequest
-  .then(({data}) => {
-    const booksMarkup = data.map(createBookRow).join("");
+const books = getAllBooks();
+
+books
+  .then(result => {
+    const booksMarkup = result.map(createBookRow).join("");
     bookList.insertAdjacentHTML("beforeend", booksMarkup);
-  })
-  .catch(error => console.log(error));
+  });
+
+async function getAllBooks(){
+  try {
+    const response = await axios.get("http://localhost:3000/books");
+    return response.data;
+  }
+  catch(error){
+    console.log(error)
+    return error;
+  }
+}
 
 function createBookRow({name, author, isbn}){
   const bookMarkup = `<tr>

@@ -38,27 +38,23 @@ json-server --watch- db.json
 
 const bookList = document.getElementById("book-list");
 
-const booksRequest = axios.get("http://localhost:3000/books");
+const books = getAllBooks();
 
-booksRequest
-    .then(({data}) => {
-        const booksElements = data.map(createBookRow);
-        // console.log(result)
-        // console.log(booksElements)
-        bookList.append(...booksElements)
-    })
-    .catch(error => console.log(error));
+books
+  .then(result => {
+    const booksMarkup = result.map(createBookRow).join("");
+    bookList.insertAdjacentHTML("beforeend", booksMarkup);
+  });
 
-function createBookRow(book) {
-    const {name, author, isbn} = book;
-    const row = document.createElement("tr");
-    const rowContent = `<td>${name}</td>
-                        <td>${author}</td>
-                        <td>${isbn}</td>
-                        <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="#" class="btn btn-danger btn-sm btn-delete">X</a></td>`
-    row.insertAdjacentHTML("beforeend", rowContent);
-    return row;
+async function getAllBooks(){
+  try {
+    const response = await axios.get("http://localhost:3000/books");
+    return response.data;
+  }
+  catch(error){
+    console.log(error)
+    return error;
+  }
 }
 
 /*
@@ -84,7 +80,7 @@ function createBookRow(book) {
 
 const bookAddForm = document.getElementById("add-book-form");
 
-bookAddForm.addEventListener("submit", function(e){
+bookAddForm.addEventListener("submit", async function(e){
     e.preventDefault();
     const name = this.querySelector("[name=name]").value;
     const author = this.querySelector("[name=author]").value;
@@ -96,14 +92,13 @@ bookAddForm.addEventListener("submit", function(e){
         isbn
     };
 
-    const bookAddRequest = axios.post("http://localhost:3000/books", book);
-    
-    bookAddRequest
-        .then(({data}) => {
-            if(data.id){
-                const row = createBookRow(data);
-                bookList.append(row)
-            }
-        })
-        .catch(error => console.log(error))
+    try{
+        const response = await axios.post("http://localhost:3000/books", book);
+        const newBook = response.data;
+        const row = createBookRow(newBook);
+        bookList.append(row);
+    }
+    catch(error){
+        return error;
+    }
 })

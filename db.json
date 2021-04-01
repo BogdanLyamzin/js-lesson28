@@ -56,7 +56,7 @@
   "products": [
     {
       "id": 1,
-      "category": 1,
+      "categoryId": 1,
       "img": "https://user-images.githubusercontent.com/41929050/61567048-13938600-aa33-11e9-9cfd-712191013192.jpeg",
       "Url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
       "Title": "The Quantified Cactus: An Easy Plant Soil Moisture Sensor",
@@ -68,7 +68,7 @@
     },
     {
       "id": 2,
-      "category": 1,
+      "categoryId": 1,
       "img": "https://user-images.githubusercontent.com/41929050/61567049-13938600-aa33-11e9-9c69-a4184bf8e524.jpeg",
       "Url": "https://www.hackster.io/agent-hawking-1/book-light-dee7e4",
       "Title": "A beautiful switch-on book light",
@@ -77,7 +77,7 @@
     },
     {
       "id": 3,
-      "category": 1,
+      "categoryId": 1,
       "img": "https://user-images.githubusercontent.com/41929050/61567053-13938600-aa33-11e9-9780-104fe4019659.png",
       "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
       "Title": "Bling your Laptop with an Internet-Connected Light Show",
@@ -86,7 +86,7 @@
     },
     {
       "id": 4,
-      "category": 1,
+      "categoryId": 1,
       "img": "https://user-images.githubusercontent.com/41929050/61567051-13938600-aa33-11e9-8ae7-0b5c19aafab4.jpeg",
       "Url": "https://www.hackster.io/agent-hawking-1/create-a-compact-survival-kit-38bfdb",
       "Title": "Create a Compact Survival Kit with LED Track Lighting",
@@ -95,7 +95,7 @@
     },
     {
       "id": 5,
-      "category": 2,
+      "categoryId": 2,
       "img": "https://user-images.githubusercontent.com/41929050/61567054-13938600-aa33-11e9-9163-eec98e239b7a.png",
       "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
       "Title": "Bubblesort Visualization",
@@ -104,7 +104,7 @@
     },
     {
       "id": 6,
-      "category": 2,
+      "categoryId": 2,
       "img": "https://user-images.githubusercontent.com/41929050/61567055-142c1c80-aa33-11e9-96ff-9fbac6413625.png",
       "Url": "https://twitter.com/sailorhg/status/1090113666911891456",
       "Title": "Light-up Corsage",
@@ -113,7 +113,7 @@
     },
     {
       "id": 7,
-      "category": 2,
+      "categoryId": 2,
       "img": "https://user-images.githubusercontent.com/41929050/61567056-142c1c80-aa33-11e9-8682-10065d338145.png",
       "Url": "https://twitter.com/sailorhg/status/1090122822007963648",
       "Title": "Pastel hardware kit",
@@ -122,7 +122,7 @@
     },
     {
       "id": 8,
-      "category": 2,
+      "categoryId": 2,
       "img": "https://user-images.githubusercontent.com/41929050/61567052-13938600-aa33-11e9-9a88-cd842073ba44.jpg",
       "Url": "https://twitter.com/sailorhg/status/1090117277540745216",
       "Title": "Heart-shaped LED",
@@ -131,7 +131,7 @@
     },
     {
       "id": 9,
-      "category": 3,
+      "categoryId": 3,
       "img": "https://user-images.githubusercontent.com/41929050/61567060-142c1c80-aa33-11e9-8188-5a4803844a9e.png",
       "Url": "https://www.instagram.com/p/BNvESj-j8PI/",
       "Title": "Black Sweatshirt",
@@ -140,7 +140,7 @@
     },
     {
       "id": 10,
-      "category": 3,
+      "categoryId": 3,
       "img": "https://user-images.githubusercontent.com/41929050/61567059-142c1c80-aa33-11e9-939b-2ecf4492786d.png",
       "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
       "Title": "Sick of the Internet Pins",
@@ -149,7 +149,7 @@
     },
     {
       "id": 11,
-      "category": 4,
+      "categoryId": 4,
       "img": "https://user-images.githubusercontent.com/41929050/61567061-14c4b300-aa33-11e9-9fee-63ff2c0c9823.png",
       "Url": "https://www.vogueandcode.com/shop/hipster-dev-bro",
       "Title": "Hipster Dev",
@@ -158,7 +158,7 @@
     },
     {
       "id": 12,
-      "category": 4,
+      "categoryId": 4,
       "img": "https://user-images.githubusercontent.com/41929050/61567062-14c4b300-aa33-11e9-9dcd-8bfed4ece810.png",
       "Url": "https://www.vogueandcode.com/shop/pretty-girls-code-tee",
       "Title": "Pretty Girls Code Tee",
@@ -167,7 +167,7 @@
     },
     {
       "id": 13,
-      "category": 4,
+      "categoryId": 4,
       "img": "https://user-images.githubusercontent.com/41929050/61567063-14c4b300-aa33-11e9-8515-bcb866da9ea3.png",
       "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
       "Title": "Ruby Sis",
@@ -176,7 +176,7 @@
     },
     {
       "id": 14,
-      "category": 5,
+      "categoryId": 5,
       "img": "https://user-images.githubusercontent.com/41929050/61567057-142c1c80-aa33-11e9-9781-9e442418eaab.png",
       "Url": "https://www.instagram.com/p/BFktVYPinKQ/",
       "Title": "Holographic Dark Moon Necklace",
@@ -185,7 +185,7 @@
     },
     {
       "id": 15,
-      "category": 5,
+      "categoryId": 5,
       "img": "https://user-images.githubusercontent.com/41929050/61567058-142c1c80-aa33-11e9-89fb-b4f30d84d69d.png",
       "Url": "https://www.instagram.com/p/BEXlpiZCnJ3",
       "Title": "Floppy Crop",
